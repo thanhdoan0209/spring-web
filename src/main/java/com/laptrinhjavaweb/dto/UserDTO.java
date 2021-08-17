@@ -4,6 +4,8 @@ import com.laptrinhjavaweb.model.RoleModel;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDTO extends AbstractDTO<UserDTO> {
 
@@ -13,36 +15,22 @@ public class UserDTO extends AbstractDTO<UserDTO> {
 
 	@NotNull
 	@NotEmpty
-	private String firstName;
-
-	@NotNull
-	@NotEmpty
-	private String lastName;
-
 	private String fullName;
 
 	@NotNull
 	@NotEmpty
 	private String password;
 
+	private List<RoleDTO> roles = new ArrayList<>();
+
 	private int status;
-	private Long roleId;
-	private RoleModel role = new RoleModel();
 
-	public String getFirstName() {
-		return firstName;
+	public List<RoleDTO> getRoles() {
+		return roles;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lassName) {
-		this.lastName = lassName;
+	public void setRoles(List<RoleDTO> roles) {
+		this.roles = roles;
 	}
 
 	public String getUserName() {
@@ -77,19 +65,4 @@ public class UserDTO extends AbstractDTO<UserDTO> {
 		this.status = status;
 	}
 
-	public Long getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
-
-	public RoleModel getRole() {
-		return role;
-	}
-
-	public void setRole(RoleModel role) {
-		this.role = role;
-	}
 }

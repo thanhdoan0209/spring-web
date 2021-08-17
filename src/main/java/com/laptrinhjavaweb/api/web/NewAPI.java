@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,16 +21,8 @@ public class NewAPI {
     @Autowired
     private IUserService userService;
 
-    @PostMapping("/user/registration")
-    public ModelAndView registerUserAccount(
-            @ModelAttribute("user") @Valid UserDTO userDto, HttpServletRequest request, Errors errors) {
-        try {
-            UserDTO registered = userService.registerNewUserAccount(userDto);
-        } catch (UserAlreadyExistException uaeEx) {
-            mav.addObject("message", "An account for that username/email already exists.");
-            return mav;
-        }
-
-        // rest of the implementation
+    @PostMapping("/user/sign-up")
+    public UserDTO registerUserAccount(@RequestBody UserDTO userDto) {
+        return userService.registerNewUserAccount(userDto);
     }
 }

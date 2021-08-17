@@ -18,6 +18,9 @@ public class MessageUtil {
         } else if (message.equals("delete_success")) {
             result.put("message", "Deleted success");
             result.put("alert", "success");
+        } else if (message.equals("sign_up_success")){
+            result.put("message", "Sign up success, login now !");
+            result.put("alert", "success");
         } else {
             result.put("message", "error system");
             result.put("alert", "danger");

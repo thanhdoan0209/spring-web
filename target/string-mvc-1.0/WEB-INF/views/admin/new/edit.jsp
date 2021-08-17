@@ -1,3 +1,4 @@
+<%@ taglib prefix="FORM" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp"%>
 <c:url var="editNewURL" value="/admin/new/edit" />

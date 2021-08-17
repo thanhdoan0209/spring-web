@@ -16,11 +16,15 @@ public class NewConverter {
         result.setShortDescription(entity.getShortDescription());
         result.setCategoryCode(entity.getCategory().getCode());
         result.setCategoryId(entity.getCategory().getId());
+        result.setCategoryName(entity.getCategory().getName());
         return  result;
     }
 
     public NewEntity toEntity(NewDTO newDTO) {
         NewEntity result = new NewEntity();
+        if (newDTO.getId() != null) {
+            result.setId(newDTO.getId());
+        }
         result.setTitle(newDTO.getTitle());
         result.setContent(newDTO.getContent());
         result.setThumbnail(newDTO.getThumbnail());

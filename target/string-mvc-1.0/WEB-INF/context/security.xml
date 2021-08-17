@@ -19,6 +19,7 @@
                      authentication-failure-url="/dang-nhap?incorrectAccount"/>
         <session-management invalid-session-url="/dang-nhap?sessionTimeout"/>
         <logout delete-cookies="JSESSIONID"/>
+
     </http>
 
     <authentication-manager >

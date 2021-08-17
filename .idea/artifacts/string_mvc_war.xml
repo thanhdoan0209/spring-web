@@ -11,12 +11,6 @@
     </properties>
     <root id="archive" name="string-mvc-1.0.war">
       <element id="artifact" artifact-name="string-mvc:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="jpa-descriptors" facet="string-mvc/jpa/JPA" />
-        </element>
-      </element>
-      <element id="javaee-facet-resources" facet="string-mvc/web/Web2" />
     </root>
   </artifact>
 </component>

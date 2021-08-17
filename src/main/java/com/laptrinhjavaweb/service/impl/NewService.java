@@ -70,4 +70,14 @@ public class NewService implements INewService {
 			newRepository.delete(item);
 		}
 	}
+
+	@Override
+	public List<NewDTO> findAllByCategoryCode(String category) {
+		List<NewDTO> newDTOS = new ArrayList<>();
+		List<NewEntity> newEntities = newRepository.findAllByCategoryCode(category);
+		for (NewEntity item: newEntities) {
+			newDTOS.add(newConverter.toDto(item));
+		}
+		return newDTOS;
+	}
 }

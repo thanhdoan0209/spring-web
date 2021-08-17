@@ -11,4 +11,6 @@ public interface INewService {
     NewDTO findById(Long id);
     NewDTO save(NewDTO newDTO);
     void delete(Long[] ids);
+
+    List<NewDTO> findAllByCategoryCode(String category);
 }
