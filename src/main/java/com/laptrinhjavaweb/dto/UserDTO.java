@@ -1,7 +1,5 @@
 package com.laptrinhjavaweb.dto;
 
-import com.laptrinhjavaweb.model.RoleModel;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;

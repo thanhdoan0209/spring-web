@@ -1,8 +1,6 @@
 package com.laptrinhjavaweb.controller.admin;
 
 import com.laptrinhjavaweb.dto.NewDTO;
-import com.laptrinhjavaweb.model.NewModel;
-import com.laptrinhjavaweb.paging.Pageble;
 import com.laptrinhjavaweb.service.ICategoryService;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.util.MessageUtil;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
