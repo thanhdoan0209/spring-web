@@ -37,9 +37,7 @@ public class HomeController {
     private MessageUtil messageUtil;
 
     @RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
-    public ModelAndView homepage(@RequestParam(value = "category", required = false) String category,
-                                    @RequestParam("page") int page,
-                                    @RequestParam("limit") int limit, HttpServletRequest request){
+    public ModelAndView homepage(@RequestParam(value = "category", required = false) String category){
         ModelAndView mav = new ModelAndView("web/home");
         List<CategoryDTO> categories = categoryService.findAllCategory();
         mav.addObject("categories", categories);

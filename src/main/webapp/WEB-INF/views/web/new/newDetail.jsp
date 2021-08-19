@@ -28,7 +28,7 @@
                         <div class="text-muted fst-italic mb-2">Posted on ${newModel.createdDate} by ${newModel.createdBy}</div>
                         <!-- Post categories-->
                         <a class="badge bg-secondary text-decoration-none link-light"
-                           href="${pageContext.request.contextPath}/trang-chu?category=${newModel.categoryCode}&page=1&limit=6">${newModel.categoryName}</a>
+                           href="${pageContext.request.contextPath}/trang-chu?category=${newModel.categoryCode}">${newModel.categoryName}</a>
                     </header>
                     <!-- Preview image figure-->
                     <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
@@ -100,7 +100,7 @@
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
                                     <c:forEach var="item" items="${categories}">
-                                        <li><a href="${pageContext.request.contextPath}/trang-chu?category=${item.code}&page=1&limit=6">${item.name}</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/trang-chu?category=${item.code}">${item.name}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>

@@ -16,7 +16,7 @@
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
             <c:forEach var="item" items="${categories}">
-                <a href="${pageContext.request.contextPath}/trang-chu?category=${item.code}&page=1&limit=5" class="list-group-item">${item.name}</a>
+                <a href="${pageContext.request.contextPath}/trang-chu?category=${item.code}" class="list-group-item">${item.name}</a>
             </c:forEach>
         </div>
 
