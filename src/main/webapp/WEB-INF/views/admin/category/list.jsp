@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Danh sách bài viết</title>
+  <title>Danh sách thể loại</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
               <i class="ace-icon fa fa-home home-icon"></i>
               <a href="/admin-home">Trang chủ</a>
             </li>
-            <li class="active">Danh sách bài viết</li>
+            <li class="active">Danh sách thể loại</li>
           </ul><!-- /.breadcrumb -->
         </div>
         <div class="page-content">
@@ -36,13 +36,13 @@
                     <div class="dt-buttons btn-overlap btn-group">
                       <a
                          class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
-                         data-toggle="tooltip" title='Thêm bài viết'
-                         href='<c:url value="/admin/new/edit"/>'>
+                         data-toggle="tooltip" title='Thêm thể loại'
+                         href='<c:url value="/admin/category/edit"/>'>
                         <span><i class="fa fa-plus-circle bigger-110 purple"></i></span>
                       </a>
                       <button id="btnDelete" type="button" onclick="warningBeforeDelete()"
                               class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
-                              data-toggle="tooltip" title='Xóa bài viết'>
+                              data-toggle="tooltip" title='Xóa thể loại'>
                         <span><i class="fa fa-trash-o bigger-110 pink"></i></span>
                       </button>
                     </div>
@@ -56,9 +56,8 @@
                       <thead>
                       <tr>
                           <th><input type="checkbox" class="form-check-input"/></th>
-                          <th>Thể loại </th>
-                          <th>Tên bài viết</th>
-                          <th>Mô tả ngắn</th>
+                          <th>Tên thể loại</th>
+                          <th>Code thể loại</th>
                           <th>Thao tác</th>
                       </tr>
                       </thead>
@@ -66,16 +65,15 @@
                       <c:forEach var="item" items="${model.listResult}">
                         <tr>
                           <td id="checkboxList"><input class="form-check-input" type="checkbox" value="${item.id}" id="${item.id}" name="checkbox"></td>
-                          <td>${item.categoryName}</td>
-                          <td>${item.title}</td>
-                          <td>${item.shortDescription}</td>
+                          <td>${item.name}</td>
+                          <td>${item.code}</td>
                           <td>
-                            <c:url var="updateNewURL" value="/admin/new/edit">
+                            <c:url var="updateCategoryURL" value="/admin/category/edit">
                               <c:param name="id" value="${item.id}"></c:param>
                             </c:url>
                             <a class="btn btn-sm btn-primary btn-edit"
-                               data-toggle="tooltip" title="Cập nhật bài viết"
-                               href='${updateNewURL}'><i class="fa fa-pencil-square-o"aria-hidden="true"></i>
+                               data-toggle="tooltip" title="Cập nhật thể loại"
+                               href='${updateCategoryURL}'><i class="fa fa-pencil-square-o"aria-hidden="true"></i>
                             </a>
                           </td>
                         </tr>
@@ -97,7 +95,6 @@
   </div><!-- /.main-content -->
 
   <script>
-
 
     var totalPages = ${model.totalPage};
     var currentPage = ${model.page};
@@ -137,15 +134,15 @@
 
       function deleteNew(data) {
         $.ajax({
-          url: '/api-admin/new/',
+          url: '/api-admin/category/',
           type: 'DELETE',
           contentType: 'application/json',
           data: JSON.stringify(data),
           success: function (result) {
-            window.location.href = "/admin/new/list?page=1&limit=3&message=delete_success";
+            window.location.href = "/admin/category/list?page=1&limit=3&message=delete_success";
           },
           error: function (error) {
-            window.location.href = "/admin/new/list?page=1&limit=3&message=error_system";
+            window.location.href = "/admin/category/list?page=1&limit=3&message=error_system";
           }
         });
       }

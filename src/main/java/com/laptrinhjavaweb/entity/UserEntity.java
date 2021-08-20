@@ -11,7 +11,7 @@ import java.util.List;
 @EntityListeners(AuditingEntityListener.class)
 public class UserEntity extends BaseEntity{
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private  String userName;
 
     @Column(name = "password")

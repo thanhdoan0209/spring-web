@@ -38,6 +38,22 @@
             <a class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
+                Quản lý thể loại
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href='<c:url value="/admin/category/list?page=1&limit=3"/>'>
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        DS thể loại bài viết
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+            <a class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"></span>
                 Quản lý bài viết
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -51,6 +67,7 @@
                     <b class="arrow"></b>
                 </li>
             </ul>
+
         </li>
     </ul>
     <div class="sidebar-toggle sidebar-collapse">

@@ -14,7 +14,7 @@ public class RoleEntity extends BaseEntity{
     @Column(name = "name")
     private  String name;
 
-    @Column(name = "code")
+    @Column(name = "code", unique = true)
     private  String code;
 
     @ManyToMany(mappedBy = "roles")

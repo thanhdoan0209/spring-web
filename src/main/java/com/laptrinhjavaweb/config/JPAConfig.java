@@ -1,10 +1,12 @@
 package com.laptrinhjavaweb.config;
 
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -22,6 +24,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = {"com.laptrinhjavaweb.repository"})
 @EnableTransactionManagement
 public class JPAConfig {
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -51,10 +55,10 @@ public class JPAConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/stringmvcbasicfree");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setDriverClassName(resourceBundle.getString("driverName"));
+        dataSource.setUrl( resourceBundle.getString("url"));
+        dataSource.setUsername(resourceBundle.getString("user"));
+        dataSource.setPassword(resourceBundle.getString("password"));
         return dataSource;
     }
 
@@ -62,7 +66,7 @@ public class JPAConfig {
         Properties properties = new Properties();
         //properties.setProperty("hibernate.hbm2ddl.auto", "update");
 //        properties.setProperty("hibernate.hbm2ddl.auto", "create");
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
         return properties;

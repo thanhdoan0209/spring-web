@@ -4,6 +4,8 @@ import com.laptrinhjavaweb.dto.NewDTO;
 import com.laptrinhjavaweb.entity.NewEntity;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+
 @Component
 public class NewConverter {
 
@@ -17,6 +19,10 @@ public class NewConverter {
         result.setCategoryCode(entity.getCategory().getCode());
         result.setCategoryId(entity.getCategory().getId());
         result.setCategoryName(entity.getCategory().getName());
+        result.setCreatedBy(entity.getCreateBy());
+        result.setCreatedDate((Timestamp) entity.getCreatedDate());
+        result.setModifiedBy(entity.getModifiedBy());
+        result.setModifiedDate((Timestamp) entity.getModifiedDate());
         return  result;
     }
 

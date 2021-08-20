@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface NewRepository extends JpaRepository<NewEntity, Long> {
     List<NewEntity> findAllByCategoryCode(String category);
+
+    List<NewEntity> findAllByCategoryId(Long category);
 }

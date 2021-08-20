@@ -79,15 +79,15 @@
                                 <div class="col-md-offset-0 col-md-9">
                                     <div class="col-sm-12">
                                         <c:if test="${not empty model.id}">
-                                            <button type="button" class="btn btn-info" id="btnAddOrUpdateNew"/>
-                                            <i class="ace-icon fa fa-check bigger-110"></i>
-                                            Cập nhật bài viết
+                                            <button type="button" class="btn btn-info" id="btnAddOrUpdateNew">
+                                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                                Cập nhật bài viết
                                             </button>
                                         </c:if>
                                         <c:if test="${empty model.id}">
-                                            <button type="button" class="btn btn-info" id="btnAddOrUpdateNew"/>
-                                            <i class="ace-icon fa fa-check bigger-110"></i>
-                                            Thêm bài viết
+                                            <button type="button" class="btn btn-info" id="btnAddOrUpdateNew">
+                                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                                Thêm bài viết
                                             </button>
                                         </c:if>
                                         &nbsp; &nbsp; &nbsp;

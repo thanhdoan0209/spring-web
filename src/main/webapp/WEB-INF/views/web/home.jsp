@@ -13,13 +13,12 @@
 
     <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h2 class="my-4">Thể loại</h2>
         <div class="list-group">
             <c:forEach var="item" items="${categories}">
                 <a href="${pageContext.request.contextPath}/trang-chu?category=${item.code}" class="list-group-item">${item.name}</a>
             </c:forEach>
         </div>
-
     </div>
     <!-- /.col-lg-3 -->
 

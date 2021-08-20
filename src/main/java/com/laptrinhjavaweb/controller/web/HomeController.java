@@ -20,9 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller(value = "homeControllerOfWeb")
 public class HomeController {
@@ -41,11 +39,14 @@ public class HomeController {
         ModelAndView mav = new ModelAndView("web/home");
         List<CategoryDTO> categories = categoryService.findAllCategory();
         mav.addObject("categories", categories);
-        if (category != null) {
-            List<NewDTO> news = newService.findAllByCategoryCode(category);
-            mav.addObject("news", news);
-        } else {
-            List<NewDTO> news = newService.findAllByCategoryCode(categories.get(0).getCode());
+        if (categories.size() != 0) {
+            List<NewDTO> news;
+            if (category != null) {
+                news = newService.findAllByCategoryCode(category);
+            } else {
+                news = newService.findAllByCategoryCode(categories.get(0).getCode());
+            }
+            Collections.reverse(news);
             mav.addObject("news", news);
         }
         return  mav;
