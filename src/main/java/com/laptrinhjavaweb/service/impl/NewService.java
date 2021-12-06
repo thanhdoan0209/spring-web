@@ -7,6 +7,7 @@ import com.laptrinhjavaweb.entity.NewEntity;
 import com.laptrinhjavaweb.repository.CategoryRepository;
 import com.laptrinhjavaweb.repository.NewRepository;
 import com.laptrinhjavaweb.service.INewService;
+import com.laptrinhjavaweb.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

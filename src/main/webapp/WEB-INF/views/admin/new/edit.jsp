@@ -140,7 +140,6 @@
                 ]
             });
         });
-
         $('#btnAddOrUpdateNew').click(function (e) {
             e.preventDefault();
             var data = {};
